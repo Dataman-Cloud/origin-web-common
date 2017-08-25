@@ -1,6 +1,6 @@
 {
-  "name": "origin-web-common",
-  "version": "0.0.51",
+  "name": "dm-origin-web-common",
+  "version": "0.0.52",
   "main": [
     "dist/origin-web-common.js",
     "dist/origin-web-common.css"
@@ -8,7 +8,7 @@
   "authors": [
     "Red Hat"
   ],
-  "description": "Library of common services and components for OpenShift Web Console.",
+  "description": "Library of common services and components for OpenShift Web Console. I18n support added.",
   "license": "Apache-2.0",
   "ignore": [
     "Gruntfile.js",
@@ -24,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/openshift/origin-web-common.git"
+    "url": "git://github.com/Dataman-Cloud/origin-web-common.git"
   },
   "dependencies": {
     "angular": "~1.5.11",
@@ -37,7 +37,8 @@
     "kubernetes-label-selector": "~2.0.0",
     "lodash": "~4.17.4",
     "patternfly": "~3.26.1",
-    "uri.js": "~1.18.12"
+    "uri.js": "~1.18.12",
+    "angular-gettext": "2.3.9"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.11",
