@@ -21,6 +21,10 @@ msgstr ""
 msgid "An error occurred creating the binding."
 msgstr ""
 
+#: src/components/delete-project/delete-project-modal.html:5
+msgid "Are you sure you want to delete the project '<strong>{{displayName ? displayName : projectName}}</strong>'?"
+msgstr ""
+
 #: src/components/binding/bindResults.html:37
 msgid "Binding Failed"
 msgstr ""
@@ -65,6 +69,10 @@ msgstr ""
 
 #: src/components/binding/bindServiceForm.html:16
 msgid "Create a secret and inject it into an application"
+msgstr ""
+
+#: src/components/delete-project/delete-project-modal.html:26
+msgid "Delete"
 msgstr ""
 
 #: src/components/delete-project/delete-project-button.html:10
@@ -114,6 +122,10 @@ msgstr ""
 msgid "Name is required."
 msgstr ""
 
+#: src/openshiftCommonUI.module.js:27
+msgid "Name must consist of lower-case letters, numbers, periods, and hyphens. It must start and end with a letter or a number."
+msgstr ""
+
 #: src/components/create-project/createProject.html:33
 msgid "Name must have at least two characters."
 msgstr ""
@@ -154,6 +166,15 @@ msgstr ""
 msgid "The binding was created but is not ready yet."
 msgstr ""
 
+#: src/services/projects.js:48
+#: src/services/projects.js:51
+msgid "The project"
+msgstr ""
+
+#: src/services/projects.js:45
+msgid "The project could not be loaded."
+msgstr ""
+
 #: src/components/binding/bindApplicationForm.html:49
 msgid "There are no bindable services in this project"
 msgstr ""
@@ -167,11 +188,23 @@ msgid "This service is not yet ready. If you bind to it, then the binding will b
 msgstr ""
 
 #: src/components/delete-project/delete-project-modal.html:6
-msgid "This will <strong>delete all resources</strong> associated with the project {{project | displayName}} and <strong>cannot be undone</strong>.  Make sure this is something you really want to do!"
+msgid "This will <strong>delete all resources</strong> associated with the project {{displayName ? displayName : projectName}} and <strong>cannot be undone</strong>.  Make sure this is something you really want to do!"
 msgstr ""
 
 #: src/components/delete-project/delete-project-modal.html:10
 msgid "Type the name of the project to confirm."
+msgstr ""
+
+#: src/services/apiService.js:215
+msgid "Unable to load details about the server. If the problem continues, please contact your system administrator."
+msgstr ""
+
+#: src/services/projects.js:48
+msgid "does not exist or you are not authorized to view it."
+msgstr ""
+
+#: src/services/projects.js:51
+msgid "does not exist."
 msgstr ""
 
 #: src/components/create-project/createProject.html:9
