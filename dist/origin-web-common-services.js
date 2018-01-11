@@ -240,7 +240,9 @@ angular.module('openshiftCommonServices')
                                 $q,
                                 $http,
                                 $filter,
-                                $window) {
+                                $window,
+                                gettext,
+                                gettextCatalog) {
   // Set the default api versions the console will use if otherwise unspecified
   var defaultVersion = {
     "":           "v1",
@@ -403,7 +405,7 @@ angular.module('openshiftCommonServices')
       }
       // Otherwise go to the error page, the server might be down.  Can't use Navigate.toErrorPage or it will create a circular dependency
       $window.location.href = URI('error').query({
-        error_description: "Unable to load details about the server. If the problem continues, please contact your system administrator.",
+        error_description: gettextCatalog.getString(gettext("Unable to load details about the server. If the problem continues, please contact your system administrator.")),
         error: "API_DISCOVERY"
       }).toString();
       return;
@@ -2804,7 +2806,7 @@ angular.module('openshiftCommonServices')
 
 angular.module('openshiftCommonServices')
   .factory('ProjectsService',
-    function($location, $q, AuthService, DataService, annotationNameFilter, AuthorizationService) {
+    function($location, $q, AuthService, DataService, annotationNameFilter, AuthorizationService, gettext, gettextCatalog) {
 
 
       var cleanEditableAnnotations = function(resource) {
@@ -2844,13 +2846,13 @@ angular.module('openshiftCommonServices')
                                         });
                               }, function(e) {
                                 context.projectPromise.reject(e);
-                                var description = 'The project could not be loaded.';
+                                var description = gettextCatalog.getString(gettext('The project could not be loaded.'));
                                 var type = 'error';
                                 if(e.status === 403) {
-                                  description = 'The project ' + context.projectName + ' does not exist or you are not authorized to view it.';
+                                  description = gettextCatalog.getString(gettext('The project ')) + context.projectName + gettextCatalog.getString(gettext(' does not exist or you are not authorized to view it.'));
                                   type = 'access_denied';
                                 } else if (e.status === 404) {
-                                  description = 'The project ' + context.projectName + ' does not exist.';
+                                  description = gettextCatalog.getString(gettext('The project ')) + context.projectName + gettextCatalog.getString(gettext(' does not exist.'));
                                   type = 'not_found';
                                 }
                                 $location

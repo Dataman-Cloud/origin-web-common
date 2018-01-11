@@ -127,33 +127,16 @@ module.exports = function (grunt) {
       nggettext_extract: {
         pot: {
           files: {
-            'po/openshift.pot': ['src/components/**/*.html', 'src/components/**/*.js']
+            'po/openshift.pot': ['src/components/**/*.html', 'src/components/**/*.js', 'src/services/**/*.js', 'src/openshiftCommonUI.module.js']
           }
         }
-      },
-
-      nggettext_compile: {
-        all: {
-          options: {
-            format: "json"
-          },
-          files: [
-            {
-              expand: true,
-              dot: true,
-              cwd: "po",
-              dest: "languages",
-              src: ["*.po"],
-              ext: ".json"
-            }
-          ]
-        }
       }
+
     });
 
     // You can specify which modules to build as arguments of the build task.
     grunt.registerTask('build', 'Create bootstrap build files', function () {
-      grunt.task.run(['clean', 'ngtemplates', 'concat', 'copy', 'ngAnnotate', 'less', 'uglify:build', 'test']);
+      grunt.task.run(['clean', 'ngtemplates', 'concat', 'copy', 'ngAnnotate', 'less', 'uglify:build']);
     });
 
     // Runs all the tasks of build with the exception of tests
