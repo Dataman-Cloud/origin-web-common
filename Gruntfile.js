@@ -129,6 +129,15 @@ module.exports = function (grunt) {
           src: 'dist/origin-web-common.js',
           dest: 'dist/origin-web-common.min.js'
         }
+      },
+
+      // Settings for gettext
+      nggettext_extract: {
+        pot: {
+          files: {
+            'po/openshift.pot': ['src/components/**/*.html', 'src/components/**/*.js', 'src/services/**/*.js', 'src/openshiftCommonUI.module.js']
+          }
+        }
       }
     });
 
@@ -146,6 +155,8 @@ module.exports = function (grunt) {
     grunt.registerTask('test', ['karma']);
     grunt.registerTask('check', ['test']);
     grunt.registerTask('help', ['availabletasks']);
+
+    grunt.registerTask('update-pot', ['nggettext_extract']);
   }
 
   init({});

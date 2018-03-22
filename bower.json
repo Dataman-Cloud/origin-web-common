@@ -30,6 +30,7 @@
     "angular": "~1.5.11",
     "angular-sanitize": "~1.5.11",
     "angular-utf8-base64": "~0.0.5",
+    "angular-gettext": "2.3.9",
     "hawtio-core": "~2.0.37",
     "hawtio-extension-service": "~2.0.2",
     "hopscotch": "~0.2.7",
